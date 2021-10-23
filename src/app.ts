@@ -8,6 +8,7 @@ import { Server } from "socket.io";
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(router);
 
 const serverHttp = http.createServer(app);
 
@@ -18,10 +19,8 @@ const io = new Server(serverHttp, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`usuario se conectou ${socket.id}`);
+  console.log(`usuário se conectou ${socket.id}`);
 });
-
-app.use(router);
 
 app.get("/github", (request, response) => {
   response.redirect(
