@@ -19,7 +19,7 @@ const io = new Server(serverHttp, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`usuário se conectou ${socket.id}`);
+  console.log(`1 usuário se conectou ${socket.id}`);
 });
 
 app.get("/github", (request, response) => {
